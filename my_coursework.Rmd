@@ -1,0 +1,79 @@
+---
+title: "Title of your project"
+author:
+- familyname: your last name
+  othernames: your first name
+  title: Prof./Dr./Mr./Ms./
+  qualifications: MSc in Logistics and Operations Management(edit if required)
+  correspondingauthor: true
+department: Cardiff Business School\newline Logistics &\newline Operations Management
+email: your_email@cardiff.ac.uk
+id: 0740028082 #your student ID
+organization: Cardiff Business School
+bibliography: references.bib
+biblio-style: authoryear-comp
+linestretch: 1.5
+header-includes:  
+ \usepackage{float} #use the 'float' package
+output:
+  bookdown::pdf_document2:
+    template: cardiffcoursework.tex
+    fig_caption: yes
+    fig_height: 5
+    fig_width: 8
+    number_sections: yes
+    citation_package: biblatex
+    toc: true
+---
+
+```{r setup, include=FALSE}
+library(knitr)
+knitr::opts_chunk$set(echo = FALSE, cache=TRUE, messages=FALSE, warning=FALSE,fig.pos = 'H')
+# Make sure you have the latest versions of rmarkdown and bookdown installed
+library(tidyverse)
+library(fpp3)
+```
+
+
+# Introduction {#intro}
+
+in section \@ref(intro), you can provide an overview of the coursework.
+
+In a famous paper, @BC64 and @makridakis2000m3 introduced a family of transformations \dots
+
+```{r histogram,  fig.cap="better graph", message=FALSE, warning=FALSE}
+qplot(exp(rnorm(200)))
+```
+
+Consider the logNormal data plotted in Figure \@ref(fig:histogram).
+
+# Part A
+
+
+\begin{equation}
+\bar{X} = \frac{\sum_{i=1}^n X_i}{n} (\#eq:mean)
+\end{equation}
+
+
+In Equation \@ref(eq:mean)
+
+You can use the following if you want equations without numbers.
+
+$$s^2 = \sum_{i=1}^n (x_i-\bar{x})^2$$
+
+# Part B
+
+In this part, we will consider:
+
+```{r mtcars, fig.cap="", out.extra=""}
+knitr::kable(head(mtcars, 10), caption = "this table.")
+```
+
+see Table \@ref(tab:mtcars). 
+
+# Part C
+
+
+# Part D
+
+# References
